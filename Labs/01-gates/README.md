@@ -17,5 +17,5 @@
 
 ![gif latex-2](https://user-images.githubusercontent.com/60606149/107535585-26dfe680-6bc1-11eb-9cbe-f7e53bfc7b4f.gif)
 
-![gif latex-3](https://user-images.githubusercontent.com/60606149/107535585-26dfe680-6bc1-11eb-9cbe-f7e53bfc7b4f.gif)
+![gif latex-3](https://user-images.githubusercontent.com/60606149/107536541-2e53bf80-6bc2-11eb-844b-54f0c4c99065.gif)
 
