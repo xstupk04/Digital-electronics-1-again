@@ -1,15 +1,5 @@
 # Digital-electronics-1
   
-# First Labs
-[Google](https://www.google.com)
-
-## List
-* Item 1
-  * Item 2a
-
-![GitHub](https://latex.codecogs.com/gif.latex?f%3Da*%5Coverline%7Bb%7D&plus;%5Coverline%7Bb%7D*%5Coverline%7Bc%7D)
-
-
 # Second Labs 
 **Home preparation**
 
