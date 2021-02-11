@@ -75,6 +75,9 @@ end architecture dataflow;
 
 ![Boolean](https://user-images.githubusercontent.com/60606149/107653583-16437500-6c82-11eb-932d-2ad325b4d364.gif)
 
+![Boolean](https://user-images.githubusercontent.com/60606149/107653583-16437500-6c82-11eb-932d-2ad325b4d364.gif)
+
+
 
 ![Distributive laws](https://user-images.githubusercontent.com/60606149/107652001-66b9d300-6c80-11eb-8b2b-685be48451a1.png)
 
