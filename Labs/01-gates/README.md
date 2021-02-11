@@ -120,6 +120,6 @@ end architecture dataflow;
 
 #### Screenshot with simulated time waveforms
 ![Prubeh](https://user-images.githubusercontent.com/60606149/107651071-65d47180-6c7f-11eb-822e-a0ddef5f6a76.png)
-** f1_o ÷ f4_o are verify Distributive laws
-** f5_o ÷ f8_o are verify basic Boolean postulates
+###### f1_o ÷ f4_o are verify Distributive laws
+###### f5_o ÷ f8_o are verify basic Boolean postulates
  
