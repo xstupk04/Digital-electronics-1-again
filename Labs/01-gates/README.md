@@ -75,11 +75,15 @@ end architecture dataflow;
 
 ![Boolean](https://user-images.githubusercontent.com/60606149/107653583-16437500-6c82-11eb-932d-2ad325b4d364.gif)
 
-![Boolean](https://user-images.githubusercontent.com/60606149/107653583-16437500-6c82-11eb-932d-2ad325b4d364.gif)
+![Boolean](https://user-images.githubusercontent.com/60606149/107653592-180d3880-6c82-11eb-95f8-59803c288771.gif)
+
+![Boolean](https://user-images.githubusercontent.com/60606149/107653595-19d6fc00-6c82-11eb-9003-469eaf389aa1.gif)
 
 
 
-![Distributive laws](https://user-images.githubusercontent.com/60606149/107652001-66b9d300-6c80-11eb-8b2b-685be48451a1.png)
+![Distributive laws](https://user-images.githubusercontent.com/60606149/107654420-f1033680-6c82-11eb-8ee8-f97803c750b0.gif)
+
+![Distributive laws](https://user-images.githubusercontent.com/60606149/107654426-f2346380-6c82-11eb-8ee6-1653158f0760.gif)
 
 Listing of VHDL code
 ```bash
