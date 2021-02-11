@@ -1,6 +1,6 @@
 # Digital electronics 1
   link to my github: https://github.com/xstupk04/Digital-electronics-1-again
-## First point 
+## Second point 
 
 | **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
@@ -60,4 +60,8 @@ end architecture dataflow;
 ```
 
 ![Prubeh](https://user-images.githubusercontent.com/60606149/107642241-e2ae1e00-6c74-11eb-9e5b-a164c7d4c200.png)
+
+* Link to VHDL code: [Eda playgroud code](https://www.edaplayground.com/x/FU4c)
+
+## Thrid point 
 
