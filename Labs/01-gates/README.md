@@ -65,7 +65,7 @@ end architecture dataflow;
 ```
 * Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/FU4c)
 
-#### Screenshot with simulated time waveforms,
+#### Screenshot with simulated time waveforms
 ![Prubeh](https://user-images.githubusercontent.com/60606149/107642241-e2ae1e00-6c74-11eb-9e5b-a164c7d4c200.png)
 
 
@@ -118,6 +118,6 @@ end architecture dataflow;
 ```
 * Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/NiR2)
 
-#### Screenshot with simulated time waveforms,
+#### Screenshot with simulated time waveforms
 ![Prubeh](https://user-images.githubusercontent.com/60606149/107647074-04aa9f00-6c7b-11eb-9703-a525ea24ae68.png)
 
