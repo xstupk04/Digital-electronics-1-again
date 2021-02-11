@@ -1,6 +1,7 @@
 # Digital electronics 1
   link to my github: https://github.com/xstupk04/Digital-electronics-1-again
 ## Second point 
+### Verification of De Morgan's laws of function f(c,b,a).
 
 | **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
@@ -20,7 +21,7 @@
 ![gif latex-3](https://user-images.githubusercontent.com/60606149/107536541-2e53bf80-6bc2-11eb-844b-54f0c4c99065.gif)
 
 
-* Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/FU4c)
+
 
 ```bash
 ------------------------------------------------------------------------
@@ -62,14 +63,16 @@ begin
 
 end architecture dataflow;
 ```
+* Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/FU4c)
 
+#### Screenshot with simulated time waveforms,
 ![Prubeh](https://user-images.githubusercontent.com/60606149/107642241-e2ae1e00-6c74-11eb-9e5b-a164c7d4c200.png)
 
 
-## Thrid point
+## Thrid point 
+### Verification of Distributive laws
 
-* Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/NiR2)
-
+Listing of VHDL code
 ```bash
 ------------------------------------------------------------------------
 --
@@ -113,5 +116,8 @@ begin
 end architecture dataflow;
 
 ```
+* Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/NiR2)
+
+#### Screenshot with simulated time waveforms,
 ![Prubeh](https://user-images.githubusercontent.com/60606149/107647074-04aa9f00-6c7b-11eb-9703-a525ea24ae68.png)
 
