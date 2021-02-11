@@ -119,5 +119,5 @@ end architecture dataflow;
 * Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/NiR2)
 
 #### Screenshot with simulated time waveforms
-![Prubeh](https://user-images.githubusercontent.com/60606149/107647074-04aa9f00-6c7b-11eb-9703-a525ea24ae68.png)
+![Prubeh](https://user-images.githubusercontent.com/60606149/107651071-65d47180-6c7f-11eb-822e-a0ddef5f6a76.png)
 
