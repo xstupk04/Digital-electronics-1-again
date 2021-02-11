@@ -72,6 +72,7 @@ end architecture dataflow;
 ## Thrid point 
 ### Verification of Distributive laws and basic Boolean postulates
 ![Boolean](https://user-images.githubusercontent.com/60606149/107651906-4db12200-6c80-11eb-98f4-c27f953bf0db.png)
+
 ![Distributive laws](https://user-images.githubusercontent.com/60606149/107652001-66b9d300-6c80-11eb-8b2b-685be48451a1.png)
 
 Listing of VHDL code
