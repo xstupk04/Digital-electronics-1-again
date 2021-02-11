@@ -65,6 +65,8 @@ end architecture dataflow;
 
 ## Thrid point
 
+* Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/NiR2)
+
 ```bash
 ------------------------------------------------------------------------
 --
