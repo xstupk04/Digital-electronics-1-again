@@ -72,6 +72,7 @@ end architecture dataflow;
 ## Thrid point 
 ### Verification of Distributive laws and basic Boolean postulates
 ![Boolean](https://user-images.githubusercontent.com/60606149/107653578-1479b180-6c82-11eb-8de1-e77bd16e4581.gif)
+
 ![Boolean](https://user-images.githubusercontent.com/60606149/107653583-16437500-6c82-11eb-932d-2ad325b4d364.gif)
 
 
