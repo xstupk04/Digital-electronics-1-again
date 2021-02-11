@@ -102,7 +102,11 @@ entity gates is
         f1_o    : out std_logic;         -- output function 1
         f2_o    : out std_logic;         -- output function 2
         f3_o    : out std_logic;         -- output function 3
-        f4_o    : out std_logic          -- output function 4
+        f4_o    : out std_logic;          -- output function 4
+        f5_o    : out std_logic;          -- output function 5
+        f6_o    : out std_logic;         -- output function 6
+        f7_o    : out std_logic;          -- output function 7
+        f8_o    : out std_logic          -- output function 8
     );
 end entity gates;
 
@@ -115,6 +119,11 @@ begin
     f2_o <= x_i and (y_i or z_i);
     f3_o <= (x_i or y_i) and (x_i or z_i);
     f4_o <= x_i or (y_i and z_i);
+    f5_o <= x_i and not x_i;
+    f6_o <= x_i or not x_i;
+    f7_o <= x_i or x_i or x_i;
+    f8_o <= x_i or (y_i and z_i);
+    
 
 end architecture dataflow;
 
