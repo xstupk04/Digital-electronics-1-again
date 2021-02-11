@@ -85,7 +85,7 @@ use ieee.std_logic_1164.all;-- Package for data types and logic operations
 ------------------------------------------------------------------------
 entity gates is
     port(
-         x_i     : in  std_logic;         -- Data input
+        x_i     : in  std_logic;         -- Data input
         y_i     : in  std_logic;         -- Data input
         z_i     : in  std_logic;         -- Data input
         f1_o    : out std_logic;         -- output function 1
@@ -106,6 +106,7 @@ begin
     f4_o <= x_i or (y_i and z_i);
 
 end architecture dataflow;
+
 ```
 ![Prubeh](https://user-images.githubusercontent.com/60606149/107647074-04aa9f00-6c7b-11eb-9703-a525ea24ae68.png)
 
