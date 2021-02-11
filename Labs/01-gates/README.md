@@ -18,6 +18,10 @@
 ![gif latex-2](https://user-images.githubusercontent.com/60606149/107535585-26dfe680-6bc1-11eb-9cbe-f7e53bfc7b4f.gif)
 
 ![gif latex-3](https://user-images.githubusercontent.com/60606149/107536541-2e53bf80-6bc2-11eb-844b-54f0c4c99065.gif)
+
+
+* Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/FU4c)
+
 ```bash
 ------------------------------------------------------------------------
 --
@@ -61,7 +65,6 @@ end architecture dataflow;
 
 ![Prubeh](https://user-images.githubusercontent.com/60606149/107642241-e2ae1e00-6c74-11eb-9e5b-a164c7d4c200.png)
 
-* Link to VHDL code: [EDA playgroud code](https://www.edaplayground.com/x/FU4c)
 
 ## Thrid point
 
