@@ -1,5 +1,5 @@
 # Digital electronics 1
-  
+  link to my github: (https://github.com/xstupk04/Digital-electronics-1-again)
 # First Labs 
 
 | **c** | **b** |**a** | **f(c,b,a)** |
