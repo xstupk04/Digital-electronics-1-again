@@ -23,4 +23,4 @@
 | 15 | 1 1 | 1 1 | 0 | 1 | 1 |
 
 ![PoS](https://user-images.githubusercontent.com/60606149/108215914-2354de00-7132-11eb-9e93-31527790d3d5.gif)
-![SoP](https://user-images.githubusercontent.com/60606149/108215914-2354de00-7132-11eb-9e93-31527790d3d5.gif)
+![SoP](https://user-images.githubusercontent.com/60606149/108217657-25b83780-7134-11eb-856a-1b495bbcbeb5.gif)
