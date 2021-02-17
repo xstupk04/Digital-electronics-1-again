@@ -1,4 +1,4 @@
-# Digital-electronics-1 - Second Labs 
+# Digital electronics 1 - Second Labs 
   
 ### First point: Preparation tasks
 
