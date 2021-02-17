@@ -19,7 +19,7 @@
 | 12 | 1 1 | 0 0 | 1 | 0 | 0 |
 | 13 | 1 1 | 0 1 | 1 | 0 | 0 |
 | 14 | 1 1 | 1 0 | 1 | 0 | 0 |
-| 15 | 1 1 | 1 1 | 0 | 1 | 1 |
+| 15 | 1 1 | 1 1 | 0 | 1 | 0 |
 
 According to the truth table, write canonical SoP (Sum of Products) and PoS (Product of Sums) forms for "equals" and "less than" functions:
 
