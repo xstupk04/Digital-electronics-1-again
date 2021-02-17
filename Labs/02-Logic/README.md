@@ -31,7 +31,9 @@ According to the truth table, write canonical SoP (Sum of Products) and PoS (Pro
 #### Karnaugh maps for all three functions
 
 ![K1](https://user-images.githubusercontent.com/60606149/108256977-780e4e00-715e-11eb-9ec4-520146cf5102.png)
+
 ![K2](https://user-images.githubusercontent.com/60606149/108257180-b7d53580-715e-11eb-877d-32fd9440cd4f.png)
+
 ![K3](https://user-images.githubusercontent.com/60606149/108257255-ce7b8c80-715e-11eb-91f6-4e503d75d109.png)
 
 
