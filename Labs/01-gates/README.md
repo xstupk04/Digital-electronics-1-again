@@ -23,7 +23,7 @@
 
 
 
-```bash
+```vhdl
 ------------------------------------------------------------------------
 --
 -- Example of basic OR, AND, XOR gates.
@@ -86,7 +86,7 @@ end architecture dataflow;
 ![Distributive laws](https://user-images.githubusercontent.com/60606149/107654426-f2346380-6c82-11eb-8ee6-1653158f0760.gif)
 
 Listing of VHDL code
-```bash
+```vhdl
 ------------------------------------------------------------------------
 --
 -- Example of basic OR, AND, XOR gates.
