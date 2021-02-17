@@ -1,6 +1,6 @@
 # Digital-electronics-1
   ## Second Labs 
-
+### First point: Preparation tasks
 
 | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **B is less than A** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -26,7 +26,7 @@ According to the truth table, write canonical SoP (Sum of Products) and PoS (Pro
 ![PoS](https://user-images.githubusercontent.com/60606149/108215914-2354de00-7132-11eb-9e93-31527790d3d5.gif)
 ![SoP](https://user-images.githubusercontent.com/60606149/108217657-25b83780-7134-11eb-856a-1b495bbcbeb5.gif)
 
-**Second point: 2-bit comparator**
+### Second point: 2-bit comparator**
 
 #### Karnaugh maps for all three functions
 
@@ -47,7 +47,7 @@ According to the truth table, write canonical SoP (Sum of Products) and PoS (Pro
 EDA Playground example code 2-bit comparator
 https://www.edaplayground.com/x/PyYQ 
 
-**Third point: 2-bit comparator**
+### Third point: 2-bit comparator
 
 ##### Listing of VHDL architecture from design file
 
