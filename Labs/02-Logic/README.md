@@ -47,7 +47,7 @@ According to the truth table, write canonical SoP (Sum of Products) and PoS (Pro
 EDA Playground example code 2-bit comparator
 https://www.edaplayground.com/x/PyYQ 
 
-### Third point: 2-bit comparator
+### Third point: 4-bit comparator
 
 ##### Listing of VHDL architecture from design file
 
