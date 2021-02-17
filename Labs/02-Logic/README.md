@@ -44,7 +44,7 @@ According to the truth table, write canonical SoP (Sum of Products) and PoS (Pro
 
 ![lessmin](https://user-images.githubusercontent.com/60606149/108259668-a8a3b700-7161-11eb-91a8-71a514b0efdc.gif)
 
-[EDA Playground](https://www.edaplayground.com/x/PyYQ)
+[EDA Playground example code 2-bit comparator](https://www.edaplayground.com/x/PyYQ)
 
 **Third point: 2-bit comparator**
 
