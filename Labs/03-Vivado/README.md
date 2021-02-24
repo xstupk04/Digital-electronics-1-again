@@ -75,6 +75,6 @@ end architecture testbench;
 - Type of board : Nexys A7-50T
 - Write your code in VHD language and test it with your testbench 
 - Start simulation and verify your correctness
-- Connect Leds, Switches, buttons, displays with your board 
+- Connect Leds, Switches, buttons, displays with your board (Constraints)
 ```
 
