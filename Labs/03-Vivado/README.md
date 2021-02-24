@@ -1,5 +1,5 @@
 # Digital electronics 1  
-# Third Labs - Logic
+## Third Labs - Vivado 
   
 ## First point: Preparation tasks
 ### The Nexys A7 board provides sixteen switches and LEDs
