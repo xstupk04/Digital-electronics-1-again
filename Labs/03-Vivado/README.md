@@ -68,5 +68,13 @@ end architecture testbench;
 ![Time](https://raw.githubusercontent.com/xstupk04/Digital-electronics-1-again/main/Labs/03-Vivado/Průběh.png)
 
 ### A Vivado tutorial
-
+```vhdl
+--> Create project with name without czech symbols 
+- Target language: VHDL
+- Simulator language: VHDL
+- Type of board : Nexys A7-50T
+- Write your code in VHD language and test it with your testbench 
+- Start simulation and verify your correctness
+- Connect Leds, Switches, buttons, displays with your board 
+```
 
