@@ -68,7 +68,7 @@ end architecture testbench;
 ![Time](https://raw.githubusercontent.com/xstupk04/Digital-electronics-1-again/main/Labs/03-Vivado/Průběh.png)
 
 ### A Vivado tutorial
-```vhdl
+```
 --> Create project with name without czech symbols 
 - Target language: VHDL
 - Simulator language: VHDL
