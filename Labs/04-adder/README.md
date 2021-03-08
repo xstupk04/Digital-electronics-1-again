@@ -128,6 +128,35 @@ end architecture Behavioral;
         wait;
     end process p_stimulus;  
 ```    
+### Screenshot with simulated time waveforms; always display all inputs and outputs
 
+![Time](https://user-images.githubusercontent.com/60606149/110366550-bbb1f480-8046-11eb-93bf-f1fc1b620da4.png)
 
 ### Listing of VHDL code from source file top.vhd with 7-segment module instantiation.
+```vhdl
+architecture Behavioral of top is
+
+begin
+
+    --------------------------------------------------------------------
+    -- Instance (copy) of hex_7seg entity
+    hex2seg : entity work.hex_7seg
+        port map(
+            hex_i    => SW,
+            seg_o(6) => CA,
+            seg_o(5) => CB,
+            seg_o(4) => CC,
+            seg_o(3) => CD,
+            seg_o(2) => CE,
+            seg_o(1) => CF,
+            seg_o(0) => CG
+        );
+    -- Connect one common anode to 3.3V
+       AN <= b"1111_0111";
+    -- Display input value on LEDs
+    LED(3 downto 0) <= SW;
+
+
+
+end Behavioral;
+```   
