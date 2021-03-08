@@ -183,3 +183,4 @@ end Behavioral;
 | E | 1110 | 0 | 1| 0| 0|
 | F | 1111 | 0 | 1| 0| 0|
 
+![Time2](https://user-images.githubusercontent.com/60606149/110390174-dfd0fe00-8065-11eb-888b-35829a19f53b.png)
