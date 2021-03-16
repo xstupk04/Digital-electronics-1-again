@@ -80,6 +80,10 @@
     end process p_stimulus;
  ```
  
+![image](https://user-images.githubusercontent.com/60606149/111322625-69398f00-8669-11eb-8e09-f1892d7426de.png)
+![image](https://user-images.githubusercontent.com/60606149/111322730-82dad680-8669-11eb-913d-e8863ef49a8d.png)
+
+ 
  ### Thrid point: Top modul
 
 ```vhdl
