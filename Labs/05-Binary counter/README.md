@@ -1,150 +1,166 @@
 # Digital electronics 1
 ## First point: preparation tasks (done before the lab at home)
 
-Complete the decoder truth table for common anode 7-segment display.
-
-![Schematic](https://raw.githubusercontent.com/xstupk04/Digital-electronics-1-again/main/Labs/03-Vivado/Schéma%20Leds.png)
-
-| **Hex** | **Inputs** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0000 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
-| 1 | 0001 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
-| 2 | 0010 | 0 | 0 | 1 | 0 | 0 | 1 | 0 |
-| 3 | 0011 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |
-| 4 | 0100 | 1 | 0 | 1 | 0 | 0 | 1 | 1 |
-| 5 | 0101 | 0 | 1 | 0 | 0 | 1 | 0 | 1 |
-| 6 | 0110 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
-| 7 | 0111 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
-| 8 | 1000 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 9 | 1001 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
-| A | 1010 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
-| b | 1011 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
-| C | 1100 | 0 | 1 | 1 | 0 | 0 | 0 | 1 |
-| d | 1101 | 1 | 0 | 0 | 0 | 0 | 1 | 0 |
-| E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
-| F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
-
-## Second point: Seven-segment display decoder
-### Listing of VHDL architecture from source file hex_7seg.vhd with syntax highlighting
-
-```vhdl
- p_7seg_decoder : process(hex_i)
+   | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** |
+   | :-: | :-: | :-: | :-: |
+   | 2&nbsp;ms | 200 000 | `x"3_0d40"` | `b"0011_0000_1101_0100_0000"` |
+   | 4&nbsp;ms | 400 000 | `x"61A80`   | `b"1100001101010000000"`      |
+   | 10&nbsp;ms | 1 000 0000 |`x"F4240`| `b"11110100001001000000"`     |
+   | 250&nbsp;ms |25 000 000|`x"17D7840`|`b"1011111010111100001000000"`|
+   | 500&nbsp;ms |50 000 000|`x"2FAF080`|`b"10111110101111000010000000"`|
+   | 1&nbsp;sec | 100 000 000 | `x"5F5_E100"` | `b"0101_1111_0101_1110_0001_0000_0000"` |
+   
+   ![Schematic](https://raw.githubusercontent.com/xstupk04/Digital-electronics-1-again/main/Labs/03-Vivado/Schéma%20Leds.png)
+   
+   ### Second point: Bidirectional counter
+   
+   #### Listing of VHDL code of the process p_cnt_up_down
+  ```vhdl 
     begin
-        case hex_i is
-            when "0000" =>
-                seg_o <= "0000001";     -- 0
-                
-            when "0001" =>
-                seg_o <= "1001111";     -- 1
-                
-            when "0010" =>
-                seg_o <= "0010010";     -- 2  
-                
-            when "0011" =>
-                seg_o <= "0000110";     -- 3  
-                
-            when "0100" =>
-                seg_o <= "1010011";     -- 4  
-                
-            when "0101" =>
-                seg_o <= "0100101";     -- 5
-                
-            when "0110" =>
-                seg_o <= "0100000";     -- 6 
-                    
-            when "0111" =>
-                seg_o <= "0001111";     -- 7 
-                
-            when "1000" =>
-                seg_o <= "0000000";     -- 8  
-                  
-            when "1001" =>
-                seg_o <= "0000100";     -- 9   
-                             
-            when "1010" =>
-                seg_o <= "0001000";     -- A
-                
-            when "1011" =>
-                seg_o <= "1001111";     -- B
-            
-            when "1100" =>
-                seg_o <= "0110001";     -- C
-                
-            when "1101" =>
-                seg_o <= "1000010";     -- D    
-                   
-            when "1110" =>
-                seg_o <= "0110000";     -- E
-                
-            when others =>
-                seg_o <= "0111000";     -- F
-        end case;
-    end process p_7seg_decoder;
+        if rising_edge(clk) then
+        
+            if (reset = '1') then               -- Synchronous reset
+                s_cnt_local <= (others => '0'); -- Clear all bits
 
-end architecture Behavioral;
-```
-### Listing of VHDL stimulus process from testbench file tb_hex_7seg.vhd with syntax highlighting and asserts,
-```vhdl
- p_stimulus : process
+            elsif (en_i = '1') then       -- Test if counter is enabled
+
+
+            -- TEST COUNTER DIRECTION HERE
+                if (cnt_up_i = '1') then
+                
+                  s_cnt_local <= s_cnt_local + 1;
+ 
+               else 
+                 
+                 s_cnt_local <= s_cnt_local - 1;
+             end if;
+            end if;
+        end if;
+    end process p_cnt_up_down;
+   
+ ```
+ 
+  #### Listing of VHDL reset and stimulus processes from testbench file tb_cnt_up_down.vhd
+  
+```vhdl 
+   p_reset_gen : process
     begin
-        -- Report a note at the begining of stimulus process
+        s_reset <= '0';
+        wait for 12 ns;
+        
+        -- Reset activated
+        s_reset <= '1';
+        wait for 73 ns;
+
+        s_reset <= '0';
+        wait;
+    end process p_reset_gen;
+
+    --------------------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------------------
+    p_stimulus : process
+    begin
         report "Stimulus process started" severity note;
 
+        -- Enable counting
+        s_en     <= '1';
+        
+        -- Change counter direction
+        s_cnt_up <= '1';
+        wait for 380 ns;
+        s_cnt_up <= '0';
+        wait for 220 ns;
 
-        -- First test values
-        s_hex <= "0000";  wait for 100 ns;
-        
-        s_hex <= "0001";  wait for 100 ns;
-         
-        s_hex <= "0010";  wait for 100 ns;
-        
-        s_hex <= "0011";  wait for 100 ns;
-        
-        s_hex <= "0100";  wait for 100 ns;
-        
-        s_hex <= "0101";  wait for 100 ns;
-        
-        s_hex <= "0110";  wait for 100 ns;
-        
-        s_hex <= "0111";  wait for 100 ns;
-        
-        s_hex <= "1000";  wait for 100 ns;
-        
-        s_hex <= "1001";  wait for 100 ns;
-        
-        s_hex <= "1010";  wait for 100 ns;
-        
-        s_hex <= "1011";  wait for 100 ns;
-        
-        s_hex <= "1100";  wait for 100 ns;
-        
-        s_hex <= "1101";  wait for 100 ns;
-        
-        s_hex <= "1110";  wait for 100 ns;
-     
-        
+        -- Disable counting
+        s_en     <= '0';
 
-
-        -- Report a note at the end of stimulus process
         report "Stimulus process finished" severity note;
         wait;
-    end process p_stimulus;  
-```    
-### Screenshot with simulated time waveforms; always display all inputs and outputs
+    end process p_stimulus;
+ ```
+ 
+![image](https://user-images.githubusercontent.com/60606149/111322625-69398f00-8669-11eb-8e09-f1892d7426de.png)
+![image](https://user-images.githubusercontent.com/60606149/111322730-82dad680-8669-11eb-913d-e8863ef49a8d.png)
 
-![Time](https://user-images.githubusercontent.com/60606149/110366550-bbb1f480-8046-11eb-93bf-f1fc1b620da4.png)
+ 
+ ### Thrid point: Top modul
 
-### Listing of VHDL code from source file top.vhd with 7-segment module instantiation.
 ```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity top is
+    Port ( 
+           CLK100MHZ    : in STD_LOGIC;
+           BTNC         : in STD_LOGIC;
+           SW           : in STD_LOGIC_VECTOR (1-1 downto 0);
+           LED          : in STD_LOGIC_VECTOR (4-1 downto 0);
+           CA           : out STD_LOGIC;
+           CB           : out STD_LOGIC;
+           CC           : out STD_LOGIC;
+           CD           : out STD_LOGIC;
+           CE           : out STD_LOGIC;
+           CF           : out STD_LOGIC;
+           CG           : out STD_LOGIC;
+           AN           : out STD_LOGIC_VECTOR (8-1 downto 0));
+end top;
+
+------------------------------------------------------------------------
+-- Architecture body for top level
+------------------------------------------------------------------------
 architecture Behavioral of top is
 
+    -- Internal clock enable
+    signal s_en  : std_logic;
+    -- Internal counter
+    signal s_cnt : std_logic_vector(4 - 1 downto 0);
+
 begin
+
+    --------------------------------------------------------------------
+    -- Instance (copy) of clock_enable entity
+    clk_en0 : entity work.clock_enable
+        generic map(
+            g_MAX => 100000000
+        )
+        port map(
+            clk   => CLK100MHZ,
+            reset => BTNC,
+            ce_o  =>  s_en
+        );
+
+    --------------------------------------------------------------------
+    -- Instance (copy) of cnt_up_down entity
+    bin_cnt0 : entity work.cnt_up_down
+        generic map(
+           g_CNT_WIDTH => 4
+        )
+        port map(
+            clk     =>  CLK100MHZ,
+            reset   =>  BTNC,
+            en_i    =>  s_en,
+            cnt_up_i=>  SW(0),
+            cnt_o   =>  s_cnt
+        );          
+
+    -- Display input value on LEDs
+    LED(3 downto 0) <= s_cnt;
 
     --------------------------------------------------------------------
     -- Instance (copy) of hex_7seg entity
     hex2seg : entity work.hex_7seg
         port map(
-            hex_i    => SW,
+            hex_i    => s_cnt,
             seg_o(6) => CA,
             seg_o(5) => CB,
             seg_o(4) => CC,
@@ -153,69 +169,13 @@ begin
             seg_o(1) => CF,
             seg_o(0) => CG
         );
+
     -- Connect one common anode to 3.3V
-       AN <= b"1111_0111";
-    -- Display input value on LEDs
-    LED(3 downto 0) <= SW;
+    AN <= b"1111_1110";
+
+end architecture Behavioral;
+ ```
+ 
+ ![image](https://user-images.githubusercontent.com/60606149/111381408-f7336b00-86a5-11eb-98f2-e47724f895f7.png)
 
 
-
-end Behavioral;
-```   
-
-## Third point: LED(7:4) indicators
-### Truth table and listing of VHDL code for LEDs(7:4) with syntax highlighting
-
-| **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0000 | 1 | 0| 0| 0|
-| 1 | 0001 | 0 | 0| 1| 1|
-| 2 | 0010 | 0 | 0| 0| 1|
-| 3 | 0011 | 0 | 0| 1| 0|
-| 4 | 0100 | 0 | 0| 0| 1|
-| 5 | 0101 | 0 | 0| 1| 0|
-| 6 | 0110 | 0 | 0| 0| 0|
-| 7 | 0111 | 0 | 0| 1| 0|
-| 8 | 1000 | 0 | 0| 0| 1|
-| 9 | 1001 | 0 | 0| 0| 0|
-| A | 1010 | 0 | 1| 0| 0|
-| b | 1011 | 0 | 1| 1| 0|
-| C | 1100 | 0 | 1| 0| 0|
-| d | 1101 | 0 | 1| 1| 0|
-| E | 1110 | 0 | 1| 0| 0|
-| F | 1111 | 0 | 1| 0| 0|
-
-```vhdl
--- LED(7:4) indicators
-    -- Turn LED(4) on if input value is equal to 0, ie "0000"
-
-       LED(4) <=   '0' when (SW = "0000") else
-                        '1' ;
-    -- Turn LED(5) on if input value is greater than "1001", ie 9
-
-       LED(5) <=   '0' when (SW > "1001") else
-                        '1'; 
-    
-    -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
-    
-      LED(6) <=   '0' when (SW = "0001") else
-                        '0' when (SW = "0011") else
-                        '0' when (SW = "0101") else
-                        '0' when (SW = "0111") else
-                        '0' when (SW = "1001") else
-                        '0' when (SW = "1011") else                        
-                        '0' when (SW = "1101") else                        
-                        '0' when (SW = "1111") else
-                        '1';
-           
-    
-    -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
-    
-    LED(7) <=   '0' when (SW = "0001") else
-                        '0' when (SW = "0010") else                     
-                        '0' when (SW = "0100") else                        
-                        '0' when (SW = "1000")else
-                        '1' ;  
-```  
-
-![Time2](https://user-images.githubusercontent.com/60606149/110390174-dfd0fe00-8065-11eb-888b-35829a19f53b.png)
