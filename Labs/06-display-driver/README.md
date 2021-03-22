@@ -144,6 +144,9 @@ end architecture testbench;
 
 ![image](https://user-images.githubusercontent.com/60606149/112005249-deeaa280-8b22-11eb-9af8-3535fa6de54e.png)
 
+![image](https://user-images.githubusercontent.com/60606149/112005901-7a7c1300-8b23-11eb-8c30-cf331e99a7a3.png)
+
+
 ### Listing of VHDL architecture of the top layer
 ```vhdl 
 entity top is
