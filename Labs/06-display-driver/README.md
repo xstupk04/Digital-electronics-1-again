@@ -1,221 +1,217 @@
 # Digital electronics 1
 ## First point: preparation tasks (done before the lab at home)
 
-Complete the decoder truth table for common anode 7-segment display.
+Timing diagram figure for displaying value 3.142
+![image](https://user-images.githubusercontent.com/60606149/112004577-38060680-8b22-11eb-880a-8f892f5db785.png)
 
-![Schematic](https://raw.githubusercontent.com/xstupk04/Digital-electronics-1-again/main/Labs/03-Vivado/Schéma%20Leds.png)
+## Second point: Display driver
 
-| **Hex** | **Inputs** | **A** | **B** | **C** | **D** | **E** | **F** | **G** |
-| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0000 | 0 | 0 | 0 | 0 | 0 | 0 | 1 |
-| 1 | 0001 | 1 | 0 | 0 | 1 | 1 | 1 | 1 |
-| 2 | 0010 | 0 | 0 | 1 | 0 | 0 | 1 | 0 |
-| 3 | 0011 | 0 | 0 | 0 | 0 | 1 | 1 | 0 |
-| 4 | 0100 | 1 | 0 | 1 | 0 | 0 | 1 | 1 |
-| 5 | 0101 | 0 | 1 | 0 | 0 | 1 | 0 | 1 |
-| 6 | 0110 | 0 | 1 | 0 | 0 | 0 | 0 | 0 |
-| 7 | 0111 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
-| 8 | 1000 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 9 | 1001 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
-| A | 1010 | 0 | 0 | 0 | 1 | 0 | 0 | 0 |
-| b | 1011 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
-| C | 1100 | 0 | 1 | 1 | 0 | 0 | 0 | 1 |
-| d | 1101 | 1 | 0 | 0 | 0 | 0 | 1 | 0 |
-| E | 1110 | 0 | 1 | 1 | 0 | 0 | 0 | 0 |
-| F | 1111 | 0 | 1 | 1 | 1 | 0 | 0 | 0 |
+### Listing of VHDL code of the process p_mux with syntax highlighting
 
-## Second point: Seven-segment display decoder
-### Listing of VHDL architecture from source file hex_7seg.vhd with syntax highlighting
-
-```vhdl
- p_7seg_decoder : process(hex_i)
+```vhdl 
+ p_mux : process(s_cnt, data0_i, data1_i, data2_i, data3_i, dp_i)
     begin
-        case hex_i is
-            when "0000" =>
-                seg_o <= "0000001";     -- 0
-                
-            when "0001" =>
-                seg_o <= "1001111";     -- 1
-                
-            when "0010" =>
-                seg_o <= "0010010";     -- 2  
-                
-            when "0011" =>
-                seg_o <= "0000110";     -- 3  
-                
-            when "0100" =>
-                seg_o <= "1010011";     -- 4  
-                
-            when "0101" =>
-                seg_o <= "0100101";     -- 5
-                
-            when "0110" =>
-                seg_o <= "0100000";     -- 6 
-                    
-            when "0111" =>
-                seg_o <= "0001111";     -- 7 
-                
-            when "1000" =>
-                seg_o <= "0000000";     -- 8  
-                  
-            when "1001" =>
-                seg_o <= "0000100";     -- 9   
-                             
-            when "1010" =>
-                seg_o <= "0001000";     -- A
-                
-            when "1011" =>
-                seg_o <= "1001111";     -- B
-            
-            when "1100" =>
-                seg_o <= "0110001";     -- C
-                
-            when "1101" =>
-                seg_o <= "1000010";     -- D    
-                   
-            when "1110" =>
-                seg_o <= "0110000";     -- E
-                
+        case s_cnt is
+            when "11" =>
+                s_hex <= data3_i;
+                dp_o  <= dp_i(3);
+                dig_o <= "0111";
+
+            when "10" =>
+                    s_hex <= data2_i;
+                     dp_o  <= dp_i(2);
+                    dig_o <= "1011";
+                -- WRITE YOUR CODE HERE
+
+            when "01" =>
+            s_hex <= data1_i;
+                dp_o  <= dp_i(1);
+                dig_o <= "1101";
+                -- WRITE YOUR CODE HERE
+
             when others =>
-                seg_o <= "0111000";     -- F
+            s_hex <= data0_i;
+                dp_o  <= dp_i(0);
+                dig_o <= "1110";
+                -- WRITE YOUR CODE HERE
         end case;
-    end process p_7seg_decoder;
+    end process p_mux;
 
-end architecture Behavioral;
 ```
-### Listing of VHDL stimulus process from testbench file tb_hex_7seg.vhd with syntax highlighting and asserts,
-```vhdl
- p_stimulus : process
-    begin
-        -- Report a note at the begining of stimulus process
-        report "Stimulus process started" severity note;
 
+### Listing of VHDL testbench file tb_driver_7seg_4digits with syntax highlighting and asserts
 
-        -- First test values
-        s_hex <= "0000";  wait for 100 ns;
-        
-        s_hex <= "0001";  wait for 100 ns;
-         
-        s_hex <= "0010";  wait for 100 ns;
-        
-        s_hex <= "0011";  wait for 100 ns;
-        
-        s_hex <= "0100";  wait for 100 ns;
-        
-        s_hex <= "0101";  wait for 100 ns;
-        
-        s_hex <= "0110";  wait for 100 ns;
-        
-        s_hex <= "0111";  wait for 100 ns;
-        
-        s_hex <= "1000";  wait for 100 ns;
-        
-        s_hex <= "1001";  wait for 100 ns;
-        
-        s_hex <= "1010";  wait for 100 ns;
-        
-        s_hex <= "1011";  wait for 100 ns;
-        
-        s_hex <= "1100";  wait for 100 ns;
-        
-        s_hex <= "1101";  wait for 100 ns;
-        
-        s_hex <= "1110";  wait for 100 ns;
+```vhdl 
+architecture testbench of tb_driver_7seg_4digits is
+
+    -- Local constants
+    constant c_CLK_100MHZ_PERIOD : time    := 10 ns;
+
+    --Local signals
+    signal s_clk_100MHz : std_logic;
+    --- WRITE YOUR CODE HERE
+    signal s_reset : std_logic;
+    
+    signal s_data0 : std_logic_vector (4 - 1 downto 0);
+    signal s_data1 : std_logic_vector (4 - 1 downto 0);
+    signal s_data2 : std_logic_vector (4 - 1 downto 0);
+    signal s_data3 : std_logic_vector (4 - 1 downto 0);
+    
+    signal s_dp_i : std_logic_vector (4 - 1 downto 0);
+    signal s_dp_o : std_logic;
+    signal s_seg  : std_logic_vector (7 - 1 downto 0);
+    
+    signal s_dig : std_logic_vector (4 - 1 downto 0);
+
+begin
+    -- Connecting testbench signals with driver_7seg_4digits entity
+    -- (Unit Under Test)
+    --- WRITE YOUR CODE HERE
+    uut_driver_7seg_4digits : entity work.driver_7seg_4digits
+    port map(
      
+           clk        => s_clk_100MHz,
+           reset      => s_reset,
+            
+           data0_i    => s_data0,
+           data1_i    => s_data1,
+           data2_i    => s_data2,
+           data3_i    => s_data3,
+           
+           dp_i => s_dp_i,
+           dp_o => s_dp_o,        
+           seg_o => s_seg,
+           dig_o => s_dig
+           );
+ 
+    --------------------------------------------------------------------
+    -- Clock generation process
+    --------------------------------------------------------------------
+    p_clk_gen : process
+    begin
+        while now < 750 ns loop         -- 75 periods of 100MHz clock
+            s_clk_100MHz <= '0';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+            s_clk_100MHz <= '1';
+            wait for c_CLK_100MHZ_PERIOD / 2;
+        end loop;
+        wait;
+    end process p_clk_gen;
+
+    --------------------------------------------------------------------
+    -- Reset generation process
+    --------------------------------------------------------------------
+    
+    p_reset_gen : process
+    begin
+        s_reset <= '0';
+        wait for 28 ns;
         
+        -- Reset activated
+        s_reset <= '1';
+        wait for 53 ns;
+
+        -- Reset deactivated
+        s_reset <= '0';
+
+        wait;
+    end process p_reset_gen;
 
 
-        -- Report a note at the end of stimulus process
+    --------------------------------------------------------------------
+    -- Data generation process
+    --------------------------------------------------------------------
+   
+     p_stimulus : process
+    begin
+        report "Stimulus process started" severity note;
+        -- 3.142
+        s_data3 <= "0011";
+        s_data2 <= "0001";
+        s_data1 <= "0100";
+        s_data0 <= "0010";
+        
+        s_dp_i  <= "0111";
+
         report "Stimulus process finished" severity note;
         wait;
-    end process p_stimulus;  
-```    
-### Screenshot with simulated time waveforms; always display all inputs and outputs
+    end process p_stimulus;
 
-![Time](https://user-images.githubusercontent.com/60606149/110366550-bbb1f480-8046-11eb-93bf-f1fc1b620da4.png)
+end architecture testbench;
+```
 
-### Listing of VHDL code from source file top.vhd with 7-segment module instantiation.
-```vhdl
+### Screenshot with simulated time waveforms
+
+![image](https://user-images.githubusercontent.com/60606149/112005249-deeaa280-8b22-11eb-9af8-3535fa6de54e.png)
+
+![image](https://user-images.githubusercontent.com/60606149/112005901-7a7c1300-8b23-11eb-8c30-cf331e99a7a3.png)
+
+
+### Listing of VHDL architecture of the top layer
+```vhdl 
+entity top is
+    Port ( CLK100MHz : in STD_LOGIC;
+           BTNC : in STD_LOGIC;
+           SW : in STD_LOGIC_VECTOR (15 downto 0);
+           CA : out STD_LOGIC;
+           CB : out STD_LOGIC;
+           CC : out STD_LOGIC;
+           CD : out STD_LOGIC;
+           CE : out STD_LOGIC;
+           CF : out STD_LOGIC;
+           CG : out STD_LOGIC;
+           DP : out STD_LOGIC;
+           AN : out STD_LOGIC_VECTOR (7 downto 0)
+           );
+end top;
+
 architecture Behavioral of top is
 
 begin
-
-    --------------------------------------------------------------------
-    -- Instance (copy) of hex_7seg entity
-    hex2seg : entity work.hex_7seg
+ driver_seg_4 : entity work.driver_7seg_4digits
         port map(
-            hex_i    => SW,
-            seg_o(6) => CA,
-            seg_o(5) => CB,
-            seg_o(4) => CC,
+            clk        => CLK100MHZ,
+            reset      => BTNC,
+            data0_i(3) => SW(3),
+            data0_i(2) => SW(2),
+            data0_i(1) => SW(1),
+            data0_i(0) => SW(0),
+            
+            data1_i(3) => SW(7),
+            data1_i(2) => SW(6),
+            data1_i(1) => SW(5),
+            data1_i(0) => SW(4),
+            
+            data2_i(3) => SW(11),
+            data2_i(2) => SW(10),
+            data2_i(1) => SW(9),
+            data2_i(0) => SW(8),
+            
+            data3_i(3) => SW(15),
+            data3_i(2) => SW(14),
+            data3_i(1) => SW(13),
+            data3_i(0) => SW(12),
+            
+            dig_o => AN(3 downto 0),
+            
+            seg_o(0) => CA,
+            seg_o(1) => CB,
+            seg_o(2) => CC,
             seg_o(3) => CD,
-            seg_o(2) => CE,
-            seg_o(1) => CF,
-            seg_o(0) => CG
+            seg_o(4) => CE,
+            seg_o(5) => CF,
+            seg_o(6) => CG,
+            
+            dp_i => "0111",
+            dp_o => DP
+           
         );
-    -- Connect one common anode to 3.3V
-       AN <= b"1111_0111";
-    -- Display input value on LEDs
-    LED(3 downto 0) <= SW;
 
-
+    -- Disconnect the top four digits of the 7-segment display
+    AN(7 downto 4) <= b"1111";
 
 end Behavioral;
-```   
+```
+### Thrid point: Eight-digit driver
 
-## Third point: LED(7:4) indicators
-### Truth table and listing of VHDL code for LEDs(7:4) with syntax highlighting
-
-| **Hex** | **Inputs** | **LED4** | **LED5** | **LED6** | **LED7** |
-| :-: | :-: | :-: | :-: | :-: | :-: |
-| 0 | 0000 | 1 | 0| 0| 0|
-| 1 | 0001 | 0 | 0| 1| 1|
-| 2 | 0010 | 0 | 0| 0| 1|
-| 3 | 0011 | 0 | 0| 1| 0|
-| 4 | 0100 | 0 | 0| 0| 1|
-| 5 | 0101 | 0 | 0| 1| 0|
-| 6 | 0110 | 0 | 0| 0| 0|
-| 7 | 0111 | 0 | 0| 1| 0|
-| 8 | 1000 | 0 | 0| 0| 1|
-| 9 | 1001 | 0 | 0| 0| 0|
-| A | 1010 | 0 | 1| 0| 0|
-| b | 1011 | 0 | 1| 1| 0|
-| C | 1100 | 0 | 1| 0| 0|
-| d | 1101 | 0 | 1| 1| 0|
-| E | 1110 | 0 | 1| 0| 0|
-| F | 1111 | 0 | 1| 0| 0|
-
-```vhdl
--- LED(7:4) indicators
-    -- Turn LED(4) on if input value is equal to 0, ie "0000"
-
-       LED(4) <=   '0' when (SW = "0000") else
-                        '1' ;
-    -- Turn LED(5) on if input value is greater than "1001", ie 9
-
-       LED(5) <=   '0' when (SW > "1001") else
-                        '1'; 
-    
-    -- Turn LED(6) on if input value is odd, ie 1, 3, 5, ...
-    
-      LED(6) <=   '0' when (SW = "0001") else
-                        '0' when (SW = "0011") else
-                        '0' when (SW = "0101") else
-                        '0' when (SW = "0111") else
-                        '0' when (SW = "1001") else
-                        '0' when (SW = "1011") else                        
-                        '0' when (SW = "1101") else                        
-                        '0' when (SW = "1111") else
-                        '1';
-           
-    
-    -- Turn LED(7) on if input value is a power of two, ie 1, 2, 4, or 8
-    
-    LED(7) <=   '0' when (SW = "0001") else
-                        '0' when (SW = "0010") else                     
-                        '0' when (SW = "0100") else                        
-                        '0' when (SW = "1000")else
-                        '1' ;  
-```  
-
-![Time2](https://user-images.githubusercontent.com/60606149/110390174-dfd0fe00-8065-11eb-888b-35829a19f53b.png)
+![image](https://user-images.githubusercontent.com/60606149/112016830-5ae9e800-8b2d-11eb-958b-34db4f4568d5.jpg)
