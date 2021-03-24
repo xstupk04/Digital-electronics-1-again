@@ -5,10 +5,10 @@ Write characteristic equations and complete truth tables for D, JK, T flip-flops
 
    | **D** | **Qn** | **Q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-- |
-   | 0 | 0 |  |  |
-   | 0 | 1 |  |  |
-   | 1 |  |  |  |
-   | 1 |  |  |  |
+   | 0 | 0 | Q | /Q |
+   | 0 | 1 | Q | /Q |
+   | 1 | 0 | 0 | 1 |
+   | 1 | 1 | 1 | 0 |
 
    | **J** | **K** | **Qn** | **Q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
