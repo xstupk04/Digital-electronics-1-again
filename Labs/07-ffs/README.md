@@ -583,5 +583,6 @@ end Behavioral;
 ## Fourth point: Shift register 
 ### Image of the shift register schematic.
 
+![image](https://user-images.githubusercontent.com/60606149/112891799-db35bd80-90d8-11eb-97da-5505e1d55f19.png)
 
 
