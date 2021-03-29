@@ -185,9 +185,6 @@ begin
 end Behavioral;
 ```
 
-```vhdl
-
-```
 ### Screenshot with simulated time waveforms; always display all inputs and outputs.
 ![Time2](https://user-images.githubusercontent.com/60606149/110390174-dfd0fe00-8065-11eb-888b-35829a19f53b.png)
 
@@ -275,7 +272,7 @@ end Behavioral;
 end Behavioral;
 ```
 ### Screenshot with simulated time waveforms; always display all inputs and outputs.
-
+![image](https://user-images.githubusercontent.com/60606149/112887913-01a52a00-90d4-11eb-9274-cc015a049309.png)
 
 ### VHDL code listing of the processes  p_d_ff_rst
 ```vhdl
@@ -366,6 +363,9 @@ end Behavioral;
 end Behavioral;
 ```
 ### Screenshot with simulated time waveforms; always display all inputs and outputs.
+
+![image](https://user-images.githubusercontent.com/60606149/112888035-29948d80-90d4-11eb-8b96-cac23550dd0a.png)
+
 
 ### VHDL code listing of the processes  p_jk_ff_rst
 ```vhdl
@@ -483,6 +483,9 @@ end Behavioral;
 ```
 ### Screenshot with simulated time waveforms; always display all inputs and outputs.
 
+![image](https://user-images.githubusercontent.com/60606149/112888192-56e13b80-90d4-11eb-970f-a5d25d319a63.png)
+
+
 ### VHDL code listing of the processes p_t_ff_rst
 ```vhdl
 p_t_ff_rst : process (clk)
@@ -575,16 +578,10 @@ end Behavioral;
 ```
 ### Screenshot with simulated time waveforms; always display all inputs and outputs.
 
-
-
+![image](https://user-images.githubusercontent.com/60606149/112888286-74160a00-90d4-11eb-931d-4ed5af8458c7.png)
 
 ## Fourth point: Shift register 
 ### Image of the shift register schematic.
 
 
-```vhdl
--- LED(7:4) indicators
 
-```  
-
-![Time2](https://user-images.githubusercontent.com/60606149/110390174-dfd0fe00-8065-11eb-888b-35829a19f53b.png)
