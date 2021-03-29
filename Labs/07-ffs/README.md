@@ -28,6 +28,20 @@ Write characteristic equations and complete truth tables for D, JK, T flip-flops
    | 1 | 1 | 1 | Invert |
    | 1 | 0 | 0 | Invert |
 
+## Second point: D latch
+### VHDL code listing of the process p_d_latch with syntax highlighting
+### Listing of VHDL reset and stimulus processes from the testbench tb_d_latch.vhd
+### Screenshot with simulated time waveforms; always display all inputs and outputs.
+
+
+
+## Thrid point: D latch
+### VHDL code listing of the processes p_d_ff_arst, p_d_ff_rst, p_jk_ff_rst, p_t_ff_rst
+### Listing of VHDL clock, reset and stimulus processes from the testbench files with syntax highlighting and asserts
+### Screenshot with simulated time waveforms; always display all inputs and outputs.
+
+## Fourth point: Shift register 
+### Image of the shift register schematic.
 
 
 ```vhdl
