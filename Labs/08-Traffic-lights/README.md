@@ -163,6 +163,15 @@ end architecture Behavioral;
 
 ### State table
 
+| **Current state** | **Direction South** | **Direction West** | **Delay** | **Sensor** |
+| :-- | :-: | :-: | :-: | :-: |
+| `STOP1`      | red    | red | 1 sec | - |
+| `WEST_GO`    | red    | green | 4 sec | South=0, West=1 |
+| `WEST_WAIT`  | red    | yellow | 2 sec | - |
+| `STOP2`      | red    | red | 1 sec | - |
+| `SOUTH_GO`   | green  | red | 4 sec | South=1, West=0 |
+| `SOUTH_WAIT` | yellow | red | 2 sec | - |
+
 ### State diagram
 
 ### Listing of VHDL code of sequential process p_smart_traffic_fsm
