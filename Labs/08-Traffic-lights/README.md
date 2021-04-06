@@ -174,6 +174,8 @@ end architecture Behavioral;
 
 ### State diagram
 
+![image](https://user-images.githubusercontent.com/60606149/113726978-00d44f80-96f5-11eb-8bec-d0fa3f49aa4b.png)
+
 ### Listing of VHDL code of sequential process p_smart_traffic_fsm
 ```vhdl
  p_traffic_fsm : process(clk)
