@@ -17,5 +17,9 @@
 | LD16 | N15, M16, R12 | `1,0,0` | `1,1,0` | `0,1,0` |
 | LD17 | N16,R11,G14 | `1,0,0` | `1,1,0` | `0,1,0` |
 
+## Second point: Traffic light controller
+
 ![image](https://user-images.githubusercontent.com/60606149/113711176-eabe9300-96e4-11eb-9e92-7a981f5e18f7.png)
+
+## Listing of VHDL code of sequential process p_traffic_fsm
 
