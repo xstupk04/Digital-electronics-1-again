@@ -118,6 +118,52 @@
 
 ## Listing of VHDL code of combinatorial process p_output_fsm
 ```vhdl 
+ p_output_fsm : process(s_state)
+    begin
+        case s_state is
+            when STOP1 =>
+                south_o <= c_RED;  
+                west_o  <= c_RED;
+                
+          when WEST_GO =>
+                south_o <= c_RED;  
+                west_o  <= c_GREEN;   
+                
+            when WEST_WAIT =>
+                south_o <= c_RED;   
+                west_o  <= c_YELLOW;     
+                         
+            when STOP2 =>
+                south_o <= c_RED ;   
+                west_o  <= c_RED;   
+                
+            when SOUTH_GO =>
+                south_o <= c_GREEN;   
+                west_o  <= c_RED;   
+                
+            when SOUTH_WAIT =>
+                south_o <= c_YELLOW;  
+                west_o  <= c_RED;           
+
+            when others =>
+                south_o <= c_RED;   
+                west_o  <= c_RED;  
+        end case;
+    end process p_output_fsm;
+
+end architecture Behavioral;
 
 ```
+
+### Screenshot of the simulation, from which it is clear that controller works correctly.
+
+![image](https://user-images.githubusercontent.com/60606149/113717765-417b9b00-96ec-11eb-892c-9ddef733e99f.png)
+
+## Thrid point: Smart controller
+
+### State table
+
+### State diagram
+
+### Listing of VHDL code of sequential process p_smart_traffic_fsm
 
