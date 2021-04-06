@@ -17,5 +17,5 @@
 | LD16 | N15, M16, R12 | `1,0,0` |  |  |
 | LD17 |  |  |  |  |
 
+![image](https://user-images.githubusercontent.com/60606149/113711176-eabe9300-96e4-11eb-9e92-7a981f5e18f7.png)
 
-https://user-images.githubusercontent.com/60606149/113710910-99ae9f00-96e4-11eb-87f5-40afa580a9b1.jpg![image](https://user-images.githubusercontent.com/60606149/113710974-aa5f1500-96e4-11eb-9548-14f263453907.png)
