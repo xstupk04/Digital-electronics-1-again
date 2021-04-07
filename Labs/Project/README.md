@@ -1,21 +1,36 @@
-# Digital electronics 1
-## First point: preparation tasks (done before the lab at home)
+# Your project title
 
-| **Input P** | `0` | `0` | `1` | `1` | `0` | `1` | `0` | `1` | `1` | `1` | `1` | `0` | `0` | `1` | `1` | `1` |
-| :-- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| **Clock** | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) |
-| **State** | A |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
-| **Output R** | `0` |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+### Team members
 
-### Connection of two RGB LEDs.
+Names of all project team members.
 
-![image](https://user-images.githubusercontent.com/60606149/113676690-0d3cb600-96bd-11eb-8cd6-bad7fb485e68.png)
+[Link to your GitHub project folder]( http://github.com/xxx)
+
+### Project objectives
+
+Write your text here.
 
 
-| **RGB LED** | **Artix-7 pin names** | **Red** | **Yellow** | **Green** |
-| :-: | :-: | :-: | :-: | :-: |
-| LD16 | N15, M16, R12 | `1,0,0` |  |  |
-| LD17 |  |  |  |  |
+## Hardware description
 
-![image](https://user-images.githubusercontent.com/60606149/113711176-eabe9300-96e4-11eb-9e92-7a981f5e18f7.png)
+Write your text here.
 
+
+## VHDL modules description and simulations
+
+Write your text here.
+
+
+## TOP module description and simulations
+
+Write your text here.
+
+
+## Video
+
+*Write your text here*
+
+
+## References
+
+   1. Write your text here.
