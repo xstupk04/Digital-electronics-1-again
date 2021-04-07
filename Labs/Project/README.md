@@ -4,7 +4,7 @@
 
 Names of all project team members.
 
-[Link to your GitHub project folder]( https://github.com/xstupk04/Digital-electronics-1-again/blob/main/Labs/Project/README.md)
+[Link to my GitHub project folder]( https://github.com/xstupk04/Digital-electronics-1-again/blob/main/Labs/Project/README.md)
 
 ### Project objectives
 
